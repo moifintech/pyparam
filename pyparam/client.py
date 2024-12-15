@@ -155,11 +155,10 @@ class Client:
         return self._request('TP_KK_Verify', is_hashed=True, **data)
 
 
-    def pay_with_card(self, merchant_guid, card_guid, card_cvv, customer_gsm, fail_url, success_url, reference_id, installment, amount, total_amount, ip_address, kk_transaction_id, is_3d=False, ref_url="", data1="", data2="", data3="", data4="", data5="", description="", order_id=""):
+    def pay_with_card(self, merchant_guid, card_guid, customer_gsm, fail_url, success_url, reference_id, installment, amount, total_amount, ip_address, kk_transaction_id, is_3d=False, ref_url="", data1="", data2="", data3="", data4="", data5="", description="", order_id=""):
         data = {
             'GUID': merchant_guid,
             'KS_GUID': card_guid,
-            'CVV': card_cvv,
             'KK_Sahibi_GSM': customer_gsm,
             'Hata_URL': fail_url,
             'Basarili_URL': success_url,
